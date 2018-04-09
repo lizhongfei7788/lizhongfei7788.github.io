@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+      .back{
+	     width:265px;
+		 border-radius:5px;
+		 background:rgba(0,0,0,0.3);
+	  }
+	  .back table{
+	     width:260px;
+		 height:280px;
+	  }
+	  /*设置文本框，密码框，按钮的高宽和轮廓*/
+	  #uname,#upwd,#btn{
+	     width:100%;
+		 height:32px;
+		 outline:0;
+	  }
+	  /*h4的样式设置*/
+     .back table h4{
+	    color:#fff;
+        margin:0; /*设置h4的外边距为0*/
+	 }
+	 .back table a{
+	    color:#fff;
+		text-decoration:none;/*取消下划线效果*/
+		font-size:12px;
+	 }
+	 #btn{
+	   background:#15A7F0;
+	   border:0;/*取消按钮的边框*/
+	 }
+    
+	.myfont{
+	   color:#fff;
+	   font-size:12px;
+	}
+
+	.check{  /*验证内容显示tr的高度*/
+	  height:25px;
+	}
+
+	/*Day03的课后练习：添加背景图*/
+	#container{
+	   background:url(img/register/bg.png);
+	   height:560px;
+	   width:960px;
+	   margin:0 auto; /*div自动水平居中对齐*/
+	}
+    #container div.back{
+	   /*设置上外边距和左外边距*/
+	    margin-top:180px;
+		margin-left:50px;
+	}
+	/*用户名和密码框的小图标*/
+    #uname,#upwd{
+	   background:#fff url(img/register/yhm.png) no-repeat 95% center;
+	}
+	#upwd{
+	  background-image:url(img/register/mm.png);
+	}
+	#btn{
+	   background-image:linear-gradient(to bottom,#24AEF5,#0CA2EE);
+	   /*兼容低版本火狐浏览器的渐变效果*/
+	   background-image:-moz-linear-gradient(to bottom,#24AEF5,#0CA2EE);
+	   /*兼容低版本IE浏览器的渐变效果*/
+	   background-image:-ms-linear-gradient(to bottom,#24AEF5,#0CA2EE);
+	   /*opera*/
+	   background-image:-o-linear-gradient(to bottom,#24AEF5,#0CA2EE);
+	   /*...*/
+	}
+  </style>
+  <script>
+      function check_uname(){
+	     //验证用户名不能为空
+		 var uname=document.getElementById("uname").value;
+		 if(uname==""){
+		    document.getElementById("uname-show").innerHTML="<span style='color:red;'>用户名不能为空</span>";
+		 }else{
+		    document.getElementById("uname-show").innerHTML="<span style='color:red;'>通过</span>";
+		 }
+	  }
+  </script>
+ </head>
+ <body>
+     <!--
+	   参考学子商城登录页面效果
+       1.完成登录界面的布局（table/input）
+	   2.点击文本框时取消轮廓效果
+	   3.登录名输入框失去焦点时，验证登录名不能为空
+	 -->
+  <div id="container">
+     <!--解决子元素外边距溢出-->
+     <table></table> 
+	 <div class="back">
+		<form>
+	    <table>
+		   <!--第一行-->
+		    <tr>
+			  <td>
+			     <h4>登录学子商城</h4>
+			  </td>
+			  <td align="right">
+			     <a href="#">新用户注册：</a>
+			  </td>	
+			</tr>
+			<!--第二行：水平线-->
+			<tr>
+			  <td colspan="2"><hr></td>
+			</tr>
+			<!--第三行：输入框-->
+			<tr>
+			  <td colspan="2">
+			    <input type="text" id="uname" name="uname" placeholder="请输入您的用户名"  value="doudou" onblur="check_uname()">
+			  </td>
+			</tr>
+			<!--第四行：验证提示内容-->
+			<tr class="check">
+			  <td colspan="2" id="uname-show"></td>
+			</tr>
+			<!--第五行：密码框-->
+			<tr>
+			  <td colspan="2">
+			    <input type="password" id="upwd" name="upwd"  value="123456" placeholder="请输入您的密码">
+			  </td>
+			</tr>
+			<!--第六行：自动登录&忘记密码-->
+			<tr class="myfont">
+			  <td>
+				<input type="checkbox">自动登录
+			  </td>
+			  <td>忘记密码？</td>	
+			</tr>
+			<!--第七行：登录按钮-->
+			<tr>
+			  <td colspan="2"><input type="button" id="btn" value="登录"></td>
+			</tr>
+		</table>
+		</form>
+	 </div>
+  </div>
+	<script src="js/jquery-3.2.0.js"></script>
+	<script src="js/login.js"></script>
+ </body>
+</html>

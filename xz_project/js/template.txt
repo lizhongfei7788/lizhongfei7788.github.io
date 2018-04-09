@@ -1,0 +1,35 @@
+﻿<div class="imfor">
+					<div class="check">
+						<img src="img/cart/${p.is_checked==1?'product_true.png':'product_normal.png'}" alt="">
+					</div>
+					<div class="product">
+						<a href="product_details.html?lid=${p.lid}">
+							<img src="${p.sm}" alt="">
+						</a>
+						<span class="desc">
+							<a href="product_details.html?lid=${p.lid}">${p.title}</a>
+						</span>
+						<p class="col">
+							<span>规格：</span>
+							<span class="color-desc">${p.spec}</span>
+						</p>
+					</div>
+					<div class="price">
+						<p class="price-desc">阿甲专享价</p>
+						<p>
+							<b>¥</b><b>${p.price}</b>
+						</p>
+					</div>
+					<div class="num" data-iid="${p.iid}">
+						<span class="reduce">-</span>
+						<input type="text" value="${p.count}">
+						<span class="add">+</span>
+					</div>
+					<div class="total-price">
+						<span>¥</span>
+						<span>${(p.price*p.count).toFixed(2)}</span>
+					</div>
+					<div class="del">
+						<a href="#" data-iid="${p.iid}">删除</a>
+					</div>
+				</div>
