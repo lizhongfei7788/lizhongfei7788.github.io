@@ -1,0 +1,262 @@
+body{ margin:0; background: #F6F7A7; }
+.cat{ position: relative; top: 50px; }
+.head{ z-index: 10; }
+.face,.eye{ z-index: 20; }
+.mouth,.nose{ z-index: 30; }
+ /*1.猫头*/
+        .head{
+            margin: 0 auto;
+            width: 400px;
+            height: 340px;
+            background: #F6F7F2;
+            position: relative;
+            border-radius: 50% 50% 35% 35%;
+            border:2px solid  #2e2e2e;
+            overflow: hidden;
+        }
+        .head>.head_gray{
+            position: absolute;
+            height: 160px;
+            width: 180px;
+            background: #8D8D8D;
+            left: 110px;
+            border-radius: 0% 0% 50% 50%;
+            overflow: hidden;
+        }
+        .head>.head_gray>.head_orange{
+            height: 160px;
+            width: 90px;
+            background: #F0AC6B;
+        }
+ /*2.猫耳朵*/
+        .ear{
+            width: 374px;
+            height: 120px;
+            position: absolute;
+            top: -6px;
+            left: 50%;
+            margin-left: -187px;
+            border-radius: 0% 0% 0% 0%;
+        }
+        .ear>.ear_left,
+        .ear>.ear_right{
+            width: 160px;
+            border: 2px solid #2e2e2e;
+            background: #f3f3f3;
+            position: absolute;
+            top: 0px;
+            transition: transform 1s,left 1s;
+        }
+        .ear>.ear_left{
+            height: 200px;
+            transform: rotate(-15deg);
+            border-radius: 4% 80% 0% 50%;
+            left: -20px;
+        }
+        .cat:hover .ear>.ear_left{
+            left: -10px;
+            transform: rotate(0deg);
+            border-radius: 4% 80% 0% 60%;
+        }
+        .ear>.ear_right{
+            height: 180px;
+            transform: rotate(15deg);
+            border-radius: 80% 4% 50% 0%;
+            right: -20px;
+        }
+        .cat:hover .ear>.ear_right{
+            right: -10px;
+            transform: rotate(0deg);
+            border-radius: 80% 4% 60% 0%;
+        }
+ /*3.猫眼睛*/
+        .eye{
+            height: 60px;
+            width: 300px;
+            position: absolute;
+            top: 200px;
+            left: 50%;
+            margin-left: -150px;
+            overflow: hidden;
+        }
+        .eyeline{
+            height: 100px;
+            width: 100px;
+            border: 2px solid #2e2e2e;
+            border-radius: 50% 50% 50% 50%;
+            overflow: hidden;
+            position: absolute;
+        }
+        /*眼球*/
+        .eyeline> div:first-child {
+            height: 100px;
+            width: 30px;
+            background-color: #2e2e2e;
+            margin-left: 35px;
+            transition:all 1s;
+        }
+        .eyebottom{
+            height: 100px;
+            width: 180px;
+            border-top: 2px solid #2e2e2e;
+            border-radius: 50% 50% 50% 50%;
+            background: #F6F7F2;
+            margin-top: 50px;
+            margin-left: -40px;
+            position: absolute;
+            transition: margin-top 1s;
+        }
+        .eye>.right{
+            left: 196px;
+            top: 0px;
+            background: red;
+            position: absolute;
+        }
+        .pink{
+            position: absolute;
+            height: 28px;
+            width: 70px;
+            background: red;
+            top: 34px;
+            left: 18px;
+            border-radius:50% 50% 50% 50%;
+            background-image:radial-gradient(
+                    50% 50%, rgba(253,214,240,0.8) 0%,
+                    rgba(253,224,244,0.8) 66%,
+                    rgba(253,234,247,0.8) 100%);
+            opacity: 0.0;
+         }
+        .cat:hover .eyeline> div:first-child{
+            width:40px;
+            margin-left: 30px;
+        }
+        .cat:hover .eyebottom {
+            margin-top: 30px;
+        }
+        .cat:hover .pink {
+            opacity: 0.8;
+            transition: opacity 0.5s ease-in 0.2s;
+        }
+
+/*4.脸部花纹*/
+        .face{
+            height: 80px;
+            width: 380px;
+            position: absolute;
+            top: 212px;
+            left: 50%;
+            margin-left: -190px;
+        }
+        .face_left_red>div:first-child{
+            width: 30px;
+            height: 10px;
+            border-top: 6px #E53941 solid;
+            border-radius: 30% 80% 20% 50%;
+            transform: rotate(25deg);
+            margin-left: 20px;
+        }
+        .face_red>div:nth-child(2){
+            width: 20px;
+            height: 6px;
+            background-color: #E53941;
+            border-radius: 50% 50% 50% 50%;
+            transform: rotate(25deg);
+            margin-left: 20px;
+        }
+        .face_red>div:nth-child(3) {
+            width: 32px;
+            height: 10px;
+            border-bottom: 4px #E53941 solid;
+            border-radius: 30% 0% 90% 30%;
+            transform: rotate(25deg);
+            margin-left: 8px;
+        }
+        .face_red>div:nth-child(4) {
+            margin-top: 20px;
+            width: 26px;
+            height: 20px;
+            border-bottom: 4px #E53941 solid;
+            border-radius: 30% 0% 90% 30%;
+            transform: rotate(30deg);
+            margin-left: 28px;
+        }
+        .face_red>div:nth-child(5){
+            width: 22px;
+            height: 10px;
+            border-bottom: 3px #E53941 solid;
+            border-radius: 0% 0% 50% 50%;
+            transform: rotate(-15deg);
+            margin-left: 40px;
+            margin-top: -8px;
+        }
+
+        .face_right_red{
+            float: right;
+            transform: rotateY(180deg);
+            margin-top: -68px;
+        }
+ /*5.鼻子部分*/
+        .nose{
+            width:30px;
+            height:36px;
+            position: absolute;
+            left: 50%;
+            top:260px;
+            margin-left:-15px ;
+        }
+        .nose>div{
+            width:30px;
+            height:10px;
+            border-bottom:8px solid #2e2e2e ;
+            border-radius: 0% 0% 50% 50%;
+            margin-top:-10px;
+        }
+  /*6.嘴巴：*/
+        .mouth{
+            width: 200px;
+            height: 36px;
+            position: absolute;
+            overflow: hidden;
+            left: 50%;
+            margin-left: -100px;
+            top: 260px;
+        }
+        .mouth_style{
+            margin-left: 85px;
+            margin-top: 6px;
+        }
+        .mouth_style>div:nth-child(1){
+            width: 4px;
+            height: 8px;
+            background: #2e2e2e;
+            margin-left: 13px;
+        }
+        .mouth_style>div:nth-child(2),
+        .mouth_style>div:nth-child(3){
+            width: 50px;
+            height: 40px;
+            border-bottom: 4px solid #2e2e2e;
+            position:absolute;
+            transition:  border-radius  1s;
+            margin-top: -26px;
+        }
+        .mouth_style>div:nth-child(2){
+            border-left: 4px solid #2e2e2e;
+            border-radius:40% 0% 20% 50%;
+            margin-left: 13px;
+        }
+        .mouth_style>div:nth-child(3){
+            border-right: 4px solid #2e2e2e;
+            border-radius:0% 40% 50% 20%;
+            margin-left: -39px;
+        }
+
+        .cat:hover .mouth_style>div:nth-child(2){
+            border-radius: 50% 50% 50% 50%;
+            width: 40px;
+        }
+        .cat:hover .mouth_style>div:nth-child(3){
+            width: 40px;
+            margin-left: -30px;
+            border-radius: 50% 50% 50% 50%;
+        }
